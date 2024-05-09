@@ -241,6 +241,8 @@ main {
 .emulator-container {
     text-align: center;
     margin: 20px 0;
+    display: flex;
+    flex-direction: row;
 }
 
 #screen {
@@ -297,3 +299,5 @@ footer a {
 footer a:hover {
     text-decoration: none; /* Remove underline on hover */
 }
+
+
