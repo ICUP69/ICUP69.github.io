@@ -302,8 +302,3 @@ footer a:hover {
 }
 
 
-main{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
