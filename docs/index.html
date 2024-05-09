@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GBA Emulator | RePlay</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -133,19 +132,19 @@
             <li><a href="register.html" class="signup">Sign Up</a></li>
         </ul>
     </nav>
-    <main>
-        <div class="keyboard-controls">
-            <p>Keyboard Controls:</p>
-            <ul>
-                <li><strong>Z</strong> - A button</li>
-                <li><strong>X</strong> - B button</li>
-                <li><strong>A</strong> - L button</li>
-                <li><strong>S</strong> - R button</li>
-                <li><strong>Enter</strong> - Start</li>
-                <li><strong>Arrow keys</strong> - Directional pad</li>
-            </ul>
-        </div>
-        <div class="emulator-container">
+    <div class="keyboard-controls" style="color: white; font-weight: bold; font-size: 23px; padding-left: 20px;">
+        <p>Keyboard Controls:</p>
+        <ul>
+            <li><strong>Z</strong> - A button</li>
+            <li><strong>X</strong> - B button</li>
+            <li><strong>A</strong> - L button</li>
+            <li><strong>S</strong> - R button</li>
+            <li><strong>Enter</strong> - Start</li>
+            <li><strong>Arrow keys</strong> - Directional pad</li>
+        </ul>
+    </div>
+    <main style="display: flex; justify-content: center; align-items: center;">
+        <div class="emulator-container"></div>
             <!-- Placeholder Image -->
             
             <img id="placeholder" src="resources/gba-placeholder.png" alt="GameBoy Advance Emulator Placeholder" class="placeholder">
@@ -163,15 +162,53 @@
                     <button class="bigbutton" onclick="reset()">RESET</button>
                     <button onclick="gba.downloadSavedata()">Download Savegame</button>
                     <div id="sound">
-                        <input type="checkbox" checked onchange="gba.audio.masterEnable = this.checked">
+                        <input type="checkbox" onchange="gba.audio.masterEnable = this.checked">
                         <p>Sound</p>
                         <input type="range" min="0" max="1" value="1" step="any" onchange="setVolume(this.value)" oninput="setVolume(this.value)">
                     </div>
+                    <script>
+                        function toggleFullScreen() {
+                            var canvas = document.getElementById('screen');
+                            if (!document.fullscreenElement) {
+                                if (canvas.requestFullscreen) {
+                                    canvas.requestFullscreen();
+                                } else if (canvas.mozRequestFullScreen) { // Firefox
+                                    canvas.mozRequestFullScreen();
+                                } else if (canvas.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                                    canvas.webkitRequestFullscreen();
+                                } else if (canvas.msRequestFullscreen) { // IE/Edge
+                                    canvas.msRequestFullscreen();
+                                }
+                            } else {
+                                if (document.exitFullscreen) {
+                                    document.exitFullscreen();
+                                } else if (document.mozCancelFullScreen) { // Firefox
+                                    document.mozCancelFullScreen();
+                                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                                    document.webkitExitFullscreen();
+                                } else if (document.msExitFullscreen) { // IE/Edge
+                                    document.msExitFullscreen();
+                                }
+                            }
+                        }
+                    </script>
+                    <button onclick="toggleFullScreen()">Full Screen</button>
                 </div>
             </section>
         </div>
     </main>
-    
+    <div class="keyboard">
+        <div class="key-row">
+            <span class="key" style="background-color: #eab308">Z</span>
+            <span class="key" style="background-color: #eab308">X</span>
+            <span class="key" style="background-color: #eab308">A</span>
+            <span class="key" style="background-color: #eab308">S</span>
+            <span class="key wide-key" style="background-color: #4ade80">Enter</span>
+        </div>
+        <div class="key-row">
+            <span class="key wider-key">Arrow keys</span>
+        </div>
+    </div>
 </body>
 </html>
   

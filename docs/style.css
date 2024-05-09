@@ -1,6 +1,6 @@
 /* Header and Navigation */
 body {
-    font-family: "Press Start 2P", system-ui;
+    font-family: 'Consolas', 'Monaco', 'Lucida Console', 'Courier New', monospace;
     margin: 0;
     padding: 0;
     background-color: #250E4F;
@@ -301,4 +301,65 @@ footer a:hover {
     text-decoration: none; /* Remove underline on hover */
 }
 
+
+/*Keyboard*/
+
+.keyboard {
+    position: fixed;  /* Makes the keyboard stay at the bottom of the screen */
+    bottom: 0;        /* Aligns it at the bottom */
+    left: 0;          /* Aligns it to the left edge */
+    right: 0;         /* Aligns it to the right edge */
+    display: flex;
+    justify-content: center; /* Center the keys container horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+   
+}
+
+.key-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.key {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 5px;
+    background: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    user-select: none;
+}
+
+.key {
+    width: 40px; 
+}
+
+.wide-key {
+    width: 60px;
+}
+
+.wider-key {
+    width: 80px; 
+}
+
+.key-row .key:last-child {
+    margin-right: 0;
+}
+
+.keyboard .key-row {
+    justify-content: flex-start; 
+}
+
+.key-row:nth-child(5) .key:nth-child(3) {
+    flex-grow: 1;
+}
 
