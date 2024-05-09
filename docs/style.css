@@ -255,15 +255,27 @@ main {
 .hidden {
     display: none;
 }
+.keyboard-controls ul {
+    list-style: none;
+    padding: 0;
+}
+
+.keyboard-controls li {
+    margin: 5px 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
 
 /* Footer */
 footer {
     text-align: center;
     background-color: #1E0B41;
-    color: #fff;
-    padding: 10px 0; 
-    margin-top: 20px;
-    position: fixed;
+    color: white;
+    
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 footer a {
@@ -271,6 +283,4 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: none; /* Remove underline on hover */
-}
+
