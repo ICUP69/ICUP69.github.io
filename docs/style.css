@@ -1,9 +1,17 @@
 /* Header and Navigation */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
 body {
     font-family: "Press Start 2P", system-ui;
     margin: 0;
     padding: 0;
     background-color: #250E4F;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 .navbar {
@@ -22,38 +30,6 @@ body {
     color: #fff;
 }
 
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input[type="text"] {
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    background-color: #250E4F;
-    color: white;
-    font-family: "Kode Mono", monospace;
-}
-
-.search-bar button {
-    padding: 10px 20px;
-    background-color: #250E4F;
-    color: #fb923c;
-    border: none;
-    border-radius: 3px;
-    margin-left: 5px;
-    font-family: "Kode Mono", monospace;
-    font-weight: bold;
-    border-bottom-style: solid;
-}
-
-.search-bar button:hover {
-    background-color: #fb923c;
-    color: white;
-    border-color: #fb923c;
-}
 
 .navbar-links {
     list-style: none;
